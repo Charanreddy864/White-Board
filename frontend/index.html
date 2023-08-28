@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="./Images/icons8-ninja-16.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Drawing-Board</title>
+</head>
+<body>
+
+    <div class="options-cont">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="tool-bar">
+        <img src="Images/Pen.png" alt="" class="pen highlight">
+        <img src="Images/Eraser.png" alt="" class="eraser">
+        <img src="Images/Add-Note.png" alt="" class="add-note">
+        <img src="Images/Add-Image.png" alt="" class="add-image">
+        <img src="Images/Download.png" alt="" class="download">
+        <img src="Images/Undo.png" alt="" class="undo">
+        <img src="Images/Redo.png" alt="" class="redo">
+    </div>
+    <div class="pen-tool-cont">
+        <div class="pen-size-cont">
+            <input type="range" min="2" max="10" value="3" class="pen-width"> 
+        </div>
+        <div class="pen-color-cont">
+            <div class="black pen-color"></div>
+            <div class="blue pen-color"></div>
+            <div class="red pen-color"></div>
+        </div>
+    </div>
+    <div class="eraser-tool-cont">
+        <div class="eraser-size-cont">
+            <input type="range" min="5" max="30" value="10" class="eraser-width"> 
+        </div> 
+    </div>
+    <canvas></canvas>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <script>
+        let socket=io.connect("http://localhost:8080");
+    </script>
+    <script defer src="./tools.js"></script>
+    <script src="./canvas.js"></script>
+</body>
+</html>
