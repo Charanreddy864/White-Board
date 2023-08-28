@@ -8,7 +8,7 @@ const app=express();
 app.use(express.static("./frontend"));
 
 let port = process.env.PORT || 8080;
- let link = "https://white-board-34ufr5j62-charanreddy864.vercel.app";
+ let link = "*";
 let server=app.listen(port,()=>{
     console.log("listening to port " + port);
 })
