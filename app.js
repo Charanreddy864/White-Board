@@ -8,18 +8,18 @@ app.use(cors());
 app.use(express.static("./frontend"));
 
 let port = process.env.PORT || 8080;
-// let link = "http://127.0.0.1:5500";
+ let link = "https://white-board-tau.vercel.app";
 let server=app.listen(port,()=>{
     console.log("listening to port " + port);
 })
 
-// let io = socket(server, {
-//     cors: {
-//       origin: link,
-//       methods: ["GET", "POST"]
-//     }
-// });
-let io = socket(server);
+let io = socket(server, {
+    cors: {
+      origin: link,
+      methods: ["GET", "POST"]
+    }
+});
+// let io = socket(server);
 
 io.on("connection",(socket)=>{
     console.log("Made socket connection");
