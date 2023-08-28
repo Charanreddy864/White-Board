@@ -8,14 +8,13 @@ const app=express();
 app.use(express.static("./frontend"));
 
 let port = process.env.PORT || 8080;
- let link = "*";
 let server=app.listen(port,()=>{
     console.log("listening to port " + port);
 })
 
 let io = socket(server, {
     cors: {
-      origin: link,
+      origin: "*",
       methods: ["GET", "POST"]
     }
 });
